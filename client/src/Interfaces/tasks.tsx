@@ -1,8 +1,7 @@
 export default interface ITasks {
-  tasks: [{
-    id: string,
-    createdAt: string | Date,
-    completed: boolean,
-    task: string
-  } | null]
+  id?: string,
+  task: string,
+  createdAt?: Date,
+  completed?: boolean,
+  update?: boolean
 }

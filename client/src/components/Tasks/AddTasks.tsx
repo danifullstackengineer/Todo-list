@@ -1,9 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import {AddTask, RemoveAllTasks} from '../../actions/tasks';
+import {useDispatch} from 'react-redux';
 
 function AddTasks() {
 
   const [task, setTask] = useState("");
+  const dispatch = useDispatch();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     if (e.target.name === "task") {
@@ -12,10 +15,14 @@ function AddTasks() {
   };
 
   const handleSubmit = (e:React.FormEvent<HTMLFormElement>):void => {
-
+    e.preventDefault();
+    dispatch(AddTask({
+      task: task
+    }));
+    setTask('');
   }
   const removeAll = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>):void => {
-
+    dispatch(RemoveAllTasks())
   }
 
   return (

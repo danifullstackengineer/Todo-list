@@ -8,7 +8,7 @@ const addTask =  async (req,res) => {
 
    try {
         await newTask.save();
-        res.status(201).send("Added task!!")
+        res.status(201).send(newTask)
    }
    catch(err) {
        res.status(409).send("Couldn't add your taks!!!")

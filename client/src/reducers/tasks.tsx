@@ -1,19 +1,34 @@
+
+import { stat } from 'fs/promises';
 import ITasks from '../Interfaces/tasks';
 
-const initialState:ITasks = {
-    tasks: [null]
-}
+const initialState:[] = []
 
-const reducer = (state:any, action:any) => {
+const reducer = (state:any, action:any):any => {
     switch(action.type){
         case "ADD_TASK":
-            return state;
+            if(state === initialState){
+                return [action.payload]
+            }
+            return [...state, action.payload];
         case "REMOVE_TASK":
-            return state;
+            const newState = state.filter((task:any):(ITasks | undefined) => 
+                task._id !== action.payload ? task : undefined
+            )
+            return newState;
         case "REMOVE_ALL_TASKS":
-            return state;
+            return initialState;
         case 'GET_ALL_TASKS':
-            console.log("my balls!")
+            return action.payload;
+        case 'CURRENT_TASK':
+            return action.payload;
+        case 'UPDATE_TASK':
+            state = {
+                _id: action.payload.id,
+                completed: action.payload.completed,
+                createdAt: action.payload.createdAt,
+                task: action.payload.task
+            }
             return state;
         default: return initialState;
     }

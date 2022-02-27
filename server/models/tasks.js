@@ -1,13 +1,12 @@
 import mongoose from 'mongoose';
 
 const taskSchema = mongoose.Schema({
-    user: String,
     task: String,
     createdAt: {
         type: Date,
         default: new Date()
     },
-    finished: {
+    completed: {
         type: Boolean,
         default: false
     }

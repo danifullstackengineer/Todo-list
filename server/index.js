@@ -1,16 +1,16 @@
-const cors = require('cors');
-const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotnev');
-const bodyParser = require('body-parser');
-const router = require('./routes/tasks.js');
-const path = require('path');
+import cors from 'cors';
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
+import router from './routes/tasks.js';
+import path from 'path';
 
 dotenv.config()
 const app = express();
 
-if(!process.env.NODE_ENV){
-    app.use(cors());
+if(!(process.env.NODE_ENV === "production")){
+    app.use(cors())
 }
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))

@@ -12,7 +12,7 @@ router.get('/', getTasks)
 router.post("/addTask", addTask);
 router.get('/getTasks', getTasks)
 router.post('/removeTask/:id', removeTask);
-router.get('/removeAllTasks', removeAllTasks)
+router.post('/removeAllTasks', removeAllTasks)
 router.post('/getTask', getTask)
 router.post('/updateTask/:id', updateTask)
 

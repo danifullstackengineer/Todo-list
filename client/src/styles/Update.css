@@ -1,0 +1,63 @@
+.update {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+.update__content {
+  flex: 0.625;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+.update__returnbtn {
+  flex: 0.325;
+}
+.update__next {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.update__next > button {
+  width: 100%;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0.3em;
+  background-color: #333;
+  margin: 0.25em;
+  cursor: pointer;
+  padding: 0.125em;
+}
+.update__next > input {
+  width: 100%;
+  font-size: 2rem;
+  background-color: #bbb;
+  outline: none;
+  color: black;
+}
+.update__next > input:focus {
+    background-color: white;
+}
+.update__updatebtn:not(:disabled):hover {
+    background-color: lightgreen;
+}
+.update__completebtn:not(:disabled):hover {
+    background-color: rgb(188, 209, 0);
+}
+.update__updatebtn:disabled, .update__completebtn:disabled, .update__next > input:disabled {
+    background-color: #999;
+}
+.update__returnbtn a{
+    text-decoration: none; 
+    font-size: 4rem;
+    margin-left: 1.5em;
+    padding: 0.5em;
+    cursor: pointer; 
+    transition: color 200ms;
+}
+.update__returnbtn a:hover {
+    color: cyan;
+}

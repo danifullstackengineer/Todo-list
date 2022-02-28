@@ -6,6 +6,8 @@ const addTask =  async (req,res) => {
 
     const newTask = new Task(task);
 
+    console.log("added one!")
+
    try {
         await newTask.save();
         res.status(201).send(newTask)

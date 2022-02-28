@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+    flex-direction: column;
+}
+.header__title {
+    font-size: 5rem;
+    font-weight: 880;
+    margin-bottom: 0.25em;
+}
+.header__description {
+    font-size: 2rem;
+    margin-bottom: 0.25em;
+}

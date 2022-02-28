@@ -37,7 +37,7 @@ export const AddTask = (data: ITasks) => async (dispatch: any) => {
 export const RemoveAllTasks = () => async (dispatch: any) => {
   try {
     await $.ajax({
-      type: "GET",
+      type: "POST",
       url: "/removeAllTasks",
     }).done(() => {
       dispatch({

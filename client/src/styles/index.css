@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
+    user-select: none;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

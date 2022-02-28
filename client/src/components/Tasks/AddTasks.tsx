@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import {AddTask, RemoveAllTasks} from '../../actions/tasks';
 import {useDispatch} from 'react-redux';
+require('../../styles/AddTasks.css');
 
 function AddTasks() {
 
@@ -14,7 +15,7 @@ function AddTasks() {
     }
   };
 
-  const handleSubmit = (e:React.FormEvent<HTMLFormElement>):void => {
+  const handleSubmit = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>):void => {
     e.preventDefault();
     dispatch(AddTask({
       task: task
@@ -27,7 +28,7 @@ function AddTasks() {
 
   return (
     <div className="addtask">
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="addtask__task">
           <input
             type="text"
@@ -37,8 +38,8 @@ function AddTasks() {
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Add</button>
-        <button onClick={removeAll}>Remove All</button>
+        <button className="addtask__addbtn"onClick={handleSubmit}>Add</button>
+        <button className="addtask__removebtn" onClick={removeAll}>Remove All</button>
       </form>
     </div>
   );

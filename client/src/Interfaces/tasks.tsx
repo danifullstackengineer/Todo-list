@@ -3,5 +3,6 @@ export default interface ITasks {
   task: string,
   createdAt?: Date,
   completed?: boolean,
-  update?: boolean
+  update?: boolean,
+  nr?: number
 }

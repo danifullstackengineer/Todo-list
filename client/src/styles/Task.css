@@ -1,0 +1,59 @@
+.task {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.task:first-child {
+    margin-top: 30px;
+}
+.task__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+.task__info > span {
+    text-align: center;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0.25em;
+}
+.task__number {
+    flex: 0.1;
+}
+.task__completed:not(.task__completedUpdate) {
+    flex: 0.2;
+}
+.task__created {
+    flex: 0.25;
+}
+.task__task:not(.task__completedUpdate) {
+    flex: 0.45;
+}
+.task__buttonsDiv {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.task__buttonsDiv > button, a > button {
+    font-size: 1.5rem;
+    margin: 0.5em;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.3em;
+    padding: 0.5em;
+    background-color: #333;
+}
+.task__buttonsDiv > button:hover {
+    background-color: red;
+}
+.task__buttonsDiv > a > button:hover {
+    background-color: lightgreen;
+}
+

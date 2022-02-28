@@ -28,8 +28,8 @@ mongoose
 .connect(process.env.DB_URL)
 .then(() => {
     console.log('Connected to db...');
-    app.listen(process.env.PORT || 5000, ()=>{
-        console.log(`Server is running on port ${process.env.PORT || 5000}`);
+    app.listen(process.env.PORT, ()=>{
+        console.log(`Server is running on port ${process.env.PORT}`);
     })
 })
 .catch(err => {

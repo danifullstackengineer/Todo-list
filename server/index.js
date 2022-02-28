@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import router from './routes/tasks.js';
-import path from 'path';
+import {__dirname, join, resolve} from 'path';
 
 dotenv.config()
 const app = express();
@@ -19,10 +19,10 @@ app.use('/', router)
 // Serving static assets if in prod
 
 if(process.env.NODE_ENV === "production"){
-    app.use(express.static(path.join(__dirname, "..", "client", "build")))
+    app.use(express.static(join(__dirname, "..", "client", "build")))
 
     app.get('*', (req,res) => {
-        res.sendFile(path.resolve(__dirname,'..' ,'client', 'build', 'index.html'));
+        res.sendFile(resolve(__dirname,'..' ,'client', 'build', 'index.html'));
     })
 }
 

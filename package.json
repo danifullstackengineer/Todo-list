@@ -1,11 +1,19 @@
 {
   "name": "rollcall-rooms",
   "version": "1.0.0",
-  "main": "",
+  "main": "index.js",
   "scripts": {
-    "start": "npm start --prefix server",
-    "install-client": "cd client && npm install && npm run build && cd ..",
-    "install-server": "cd server && npm install && cd .. ",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run install-server"
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "heroku-postbuild": "npm run install-client && npm run install-server && npm run build",
+    "build": "cd client && npm run build && cd ..",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+    "server": "cd server && node index.js"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  },
+  "engines": {
+    "node": "16.14.0"
   }
 }

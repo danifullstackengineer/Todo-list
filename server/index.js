@@ -4,10 +4,14 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import router from './routes/tasks.js';
-import {__dirname, join, resolve} from 'path';
+import {fileURLToPath} from 'url';
+import path from 'path';
 
 dotenv.config()
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 if(!(process.env.NODE_ENV === "production")){
     app.use(cors())

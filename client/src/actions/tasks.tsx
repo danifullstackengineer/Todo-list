@@ -6,7 +6,7 @@ export const getAllTasks = () => async (dispatch: any) => {
     await $.ajax({
       url: "/getTasks",
       type: "GET",
-    }).done((data) => {
+    }).done((data:any) => {
       dispatch({
         type: "GET_ALL_TASKS",
         payload: data || null,
@@ -23,7 +23,7 @@ export const AddTask = (data: ITasks) => async (dispatch: any) => {
       type: "POST",
       url: "/addTask",
       data: data,
-    }).done((res) => {
+    }).done((res:any) => {
       dispatch({
         type: "ADD_TASK",
         payload: res,
@@ -58,7 +58,7 @@ export const RemoveTask = (id: string | undefined) => async (dispatch: any) => {
       type: "POST",
       url: `/removeTask/${id}`,
       data: { id: id },
-    }).done((res) => {
+    }).done((res:any) => {
       dispatch({
         type: "REMOVE_TASK",
         payload: id,
@@ -77,7 +77,7 @@ export const GetTask = (id: string | undefined) => async (dispatch: any) => {
       type: "POST",
       url: "/getTask",
       data: { id: id },
-    }).done((res) => {
+    }).done((res:any) => {
       dispatch({
         type: "CURRENT_TASK",
         payload: res,
@@ -99,7 +99,7 @@ export const UpdateTask =
         type: "POST",
         url: `/updateTask/${id}`,
         data: { id: id, task: task, createdAt:createdAt, completed: completed},
-      }).done((res) => {
+      }).done((res:any) => {
         dispatch({
           type: "UPDATE_TASK",
           payload: res,
